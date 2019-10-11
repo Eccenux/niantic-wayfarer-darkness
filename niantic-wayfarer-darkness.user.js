@@ -44,7 +44,7 @@ body,#gallery-info {
     } else {
         cssText += `
 // general darkness
-body,#gallery-info {
+body,#gallery-info,.known-information-need-edit {
   background: #0f0f0f;
   color: whitesmoke;
 }
