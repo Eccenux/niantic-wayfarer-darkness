@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OPR dark look and feel
 // @namespace    pl.enux.opr
-// @version      0.0.1
+// @version      0.2.0
 // @description  Dark skin for OPR aka Niantic Wayfarer (portal reviews)
 // @author       Eccenux
 // @match        https://wayfarer.nianticlabs.com/*
@@ -9,81 +9,159 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
+/*
+	Notes.
+
+	Showing a loader:
+	document.querySelector('.niantic-loader').parentNode.className=""
+*/
+
 /**
 	Add CSS.
 */
 function addCss() {
 
-    // base CSS
-    var cssText = `
+	// base CSS
+	var cssText = /*css*/ `
 :root {
-  --happy-headers-color: #ecdcb5;
-  --darkened-background: #ccc;
+	--happy-headers-color: #ecdcb5;
+	--darkened-background: #ccc;
+	--dark-background: #0f0f0f;
 }
 // Font friendly to other countries (not just US :-/)
 .text-input.text-input, body, h3, html {
-  font-family: Roboto,sans-serif;
+	font-family: Roboto,sans-serif;
 }
-// header and loader
-.header,
+// top header
+.header {
+	background: var(--darkened-background);
+}
+////
+// main loader
 .niantic-loader {
-  background: var(--darkened-background);
+	background: var(--dark-background);
+}
+.niantic-loader__logo {
+	filter: invert(0);
+}
+.niantic-loader__shadow {
+	filter: blur(4px);
+	background: #ccc;
+	animation: shadow-on-dark 2.2s ease-in-out infinite;
+}
+@keyframes shadow-on-dark {
+	from,
+	to {
+		opacity: .6;
+		filter: blur(6px)
+	}
+	55% {
+		opacity: .3;
+		filter: blur(4px)
+	}
 }
 `;
 
-    // most pages -- make a bit darker
-    if (location.pathname.search(/^\/(review|profile)?$/) < 0) {
-        cssText += `
+	// some pages -- make just a bit darker
+	if (location.pathname.search(/^\/(help)$/) >= 0) {
+		cssText += /*css*/ `
 // general darkness
 body,#gallery-info {
-  background: var(--darkened-background);
-  color: black;
+	background: var(--darkened-background);
+	color: black;
 }
 `;
-    // more important pages -- make dark
-    } else {
-        cssText += `
+		// more important pages -- make dark
+	} else {
+		cssText += /*css*/ `
 // general darkness
 body,#gallery-info,.known-information-need-edit {
-  background: #0f0f0f;
-  color: whitesmoke;
+	background: var(--dark-background);
+	color: whitesmoke;
+}
+
+// cookies dialog
+ark-cookiebar {
+	background: var(--darkened-background);
+	color: black;
 }
 
 // most titles
 h3 {
-  color: var(--happy-headers-color);
+	color: var(--happy-headers-color);
 }
 
 // dialogs
 .modal-dialog {
-  color: black;
+	color: black;
 }
 
-// nick on profile
+////
+// profile
+// nick
 #chart-contain > h1 {
-  color: var(--happy-headers-color);
+	color: var(--happy-headers-color);
 }
 #profile-stats {
-  color: whitesmoke;
+	color: whitesmoke;
 }
 
+////
 // review cards
 .card {
-  background: var(--darkened-background);
-  color: black;
+	background: var(--darkened-background);
+	color: black;
 }
 .supporting-statement-central-field,
 .supporting-central-field {
-  background: var(--darkened-background);
+	background: var(--darkened-background);
 }
 // review location change
 .known-information-card {
-  overflow-y: auto;
+	overflow-y: auto;
 }
 
+////
+// nominations list
+#nom-table-title--arrow::before {
+	filter: invert();
+}
+#nom-options-button {
+	filter: invert();
+}
+.nomination.--selected {
+	background: #ddd;
+}
+
+////
+// settings
+.item-edit {
+	filter: invert();
+}
+#SettingsController .settings-content .settings-item .item-header {
+	color: var(--happy-headers-color);
+}
+#SettingsController .settings-content .settings-item .item-text {
+	color: #ddd;
+}
+#SettingsController .settings-content .settings-item .item-value {
+	color: #A37CD9;
+}
+// edit forms
+.breadcrumb {
+	background-color: inherit;
+}
+.dropdown #simple-dropdown {
+	background: whitesmoke;
+	color: black;
+}
+.text-input.text-input {
+	background: whitesmoke;
+	color: black;
+}
 `;
-}
+	}
 
-    GM_addStyle(cssText.replace(/\/\/.+/g, ''));
+	GM_addStyle(cssText.replace(/\/\/.+/g, ''));
 }
 addCss();
