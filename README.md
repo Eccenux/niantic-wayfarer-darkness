@@ -5,6 +5,11 @@ Assuming you already have everything just &rarr; **[install the script](https://
 
 If that didn't work, then you might want to check full instruction (below).
 
+<img 
+src="https://raw.githubusercontent.com/Eccenux/niantic-wayfarer-darkness/master/screens/PC-review-nomination-dark.png"
+alt="screen of dark review on PC"
+width="800">
+
 Installation
 ------------
 
