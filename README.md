@@ -1,7 +1,7 @@
 # OPR dark look and feel
 Dark skin for OPR aka Niantic Wayfarer (portal reviews for Ingress, Pokemon GO and HP Wizards Unite).
 
-Assuming you already have everything just &rarr; **[install the script](https://github.com/Eccenux/niantic-wayfarer-darkness/raw/master/niantic-wayfarer-darkness.user.js)**. And then go to [OPR aka Niantic Wayfarer](https://wayfarer.nianticlabs.com/)
+Assuming you already have everything just &rarr; **[install the script](https://github.com/Eccenux/niantic-wayfarer-darkness/raw/master/niantic-wayfarer-darkness.user.js)**. And then go to [OPR aka Niantic Wayfarer](https://wayfarer.nianticlabs.com/).
 
 If that didn't work, then you might want to check full instruction (below).
 
