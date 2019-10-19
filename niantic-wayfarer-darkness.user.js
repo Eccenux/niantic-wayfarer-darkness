@@ -7,6 +7,8 @@
 // @match        https://wayfarer.nianticlabs.com/*
 // @run-at       document-start
 // @grant        GM_addStyle
+// @updateURL    https://github.com/Eccenux/niantic-wayfarer-darkness/raw/master/niantic-wayfarer-darkness.meta.js
+// @downloadURL  https://github.com/Eccenux/niantic-wayfarer-darkness/raw/master/niantic-wayfarer-darkness.user.js
 // ==/UserScript==
 
 /*
