@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OPR dark look and feel
 // @namespace    pl.enux.opr
-// @version      0.3.0
+// @version      0.3.1
 // @description  Dark skin for OPR aka Niantic Wayfarer (portal reviews)
 // @author       Eccenux
 // @match        https://wayfarer.nianticlabs.com/*
@@ -57,9 +57,10 @@ var gridMedia = /*css*/ `
 		width: 320px;
 	}	  
 }
+// 2 columns with and without sidebar
 @media screen and (min-width: 630px) and (max-width: 1339px) {
 	.card-area .card-row-container {
-		grid-template-columns: calc(50vw - 30px) calc(50vw - 30px);
+		grid-template-columns: calc(50vw - 31px) calc(50vw - 31px);
 		grid-template-areas:
 			"photo support"
 			"desc  minis"
@@ -71,6 +72,7 @@ var gridMedia = /*css*/ `
 		width: 100%;
 	}
 }
+// 2 column with sidebar extras
 @media screen and (min-width: 1025px) and (max-width: 1339px) {
 	.card, .card-style {
 		width: 100% !important;
@@ -79,7 +81,7 @@ var gridMedia = /*css*/ `
 		width: 100%;
 	}
 	.card-area .card-row-container {
-		grid-template-columns: calc(50vw - 30px - 90px) calc(50vw - 30px - 90px);
+		grid-template-columns: calc(50vw - 31px - 90px) calc(50vw - 31px - 90px);
 	}
 }
 `;
