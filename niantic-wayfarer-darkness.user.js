@@ -30,6 +30,10 @@ var gridMedia = /*css*/ `
 		"dup   dup  map     map   comments"
 		;
 	}
+	// maps
+	.card--double-width, .card-style--double-width {
+		width: 740px;
+	}
 }
 @media screen and (min-width: 1340px) and (max-width: 1719px) {
 	.card-area .card-row-container {
@@ -45,11 +49,15 @@ var gridMedia = /*css*/ `
 		width: 1120px;
 		grid-template-columns: repeat(3, auto);
 	}
+	// maps
+	.card--double-width, .card-style--double-width {
+		width: 740px;
+	}
 	#map-card {
 		width: 320px;
 	}	  
 }
-@media screen and (min-width: 0px) and (max-width: 1339px) {
+@media screen and (min-width: 630px) and (max-width: 1339px) {
 	.card-area .card-row-container {
 		grid-template-columns: calc(50vw - 30px) calc(50vw - 30px);
 		grid-template-areas:
@@ -83,18 +91,29 @@ var reviewLayout = /*css*/ `
 ////
 // main review grid
 .card-area .card-row-container {
-  display: grid;
-  width: max-content;
-  max-width: unset;
-  overflow-y: auto;
-  grid-gap: 15px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-areas:
-   "photo desc support minis what"
-   "dup   dup  map     map   comments"
-  ;
+	display: grid;
+	width: max-content;
+	max-width: unset;
+	overflow-y: auto;
+	grid-gap: 15px;
+	//grid-template-columns: 1fr;
+	grid-template-columns: calc(100vw - 50px);
+	grid-template-areas:
+		"photo"
+		"support"
+		"desc"
+		"minis"
+		"dup"
+		"map"
+		"comments"
+		"what"
+	;
+}
+.card--double-width, .card-style--double-width {
+    width: 100%;
 }
 
+// areas definitions
 #three-card-container {
   grid-area: minis;
 }
@@ -127,11 +146,6 @@ var reviewLayout = /*css*/ `
 .card-area {
 	overflow-y: auto;
 }  
-
-// maps
-.card--double-width, .card-style--double-width {
-    width: 740px;
-}
 
 // reset margin
 .card-area .card-row-container .card {
