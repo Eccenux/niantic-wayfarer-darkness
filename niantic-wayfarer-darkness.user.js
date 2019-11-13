@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OPR dark look and feel
 // @namespace    pl.enux.opr
-// @version      0.2.2
+// @version      1.0.0
 // @description  Dark skin for OPR aka Niantic Wayfarer (portal reviews)
 // @author       Eccenux
 // @match        https://wayfarer.nianticlabs.com/*
@@ -29,6 +29,7 @@ function addCss() {
 	--happy-headers-color: #ecdcb5;
 	--darkened-background: #ccc;
 	--dark-background: #0f0f0f;
+	--sidebar-background: #252525;
 }
 // Font friendly to other countries (not just US :-/)
 .text-input.text-input, body, h3, html {
@@ -36,7 +37,10 @@ function addCss() {
 }
 // top header
 .header {
-	background: var(--darkened-background);
+	background: var(--sidebar-background);
+}
+.niantic-wayfarer-logo > img {
+	filter: invert() hue-rotate(180deg) brightness(1.2) saturate(80%);
 }
 ////
 // main loader
@@ -95,7 +99,7 @@ body,#gallery-info {
 	} else {
 		cssText += /*css*/ `
 // general darkness
-body,#gallery-info,.known-information-need-edit {
+body,#gallery-info,.known-information-need-edit,.container {
 	background: var(--dark-background);
 	color: whitesmoke;
 }
@@ -170,6 +174,11 @@ h3 {
 #SettingsController .settings-content .settings-item .item-value {
 	color: #A37CD9;
 }
+// bar for on/off switch
+.switch-label::before {
+	//background-color: rgba(0,0,0,.17);
+	background-color: rgba(255,255,255,.5);
+}
 // edit forms
 .breadcrumb {
 	background-color: inherit;
@@ -181,6 +190,13 @@ h3 {
 .text-input.text-input {
 	background: whitesmoke;
 	color: black;
+}
+// material checkbox
+.consent-confirm {
+	filter: invert() contrast(90%);
+}
+.consent-confirm label {
+	filter: invert();
 }
 `;
 	}
