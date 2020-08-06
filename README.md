@@ -8,7 +8,7 @@ If that didn't work, then you might want to check full instruction ([below](#Ins
 <img 
 src="https://raw.githubusercontent.com/Eccenux/niantic-wayfarer-darkness/master/screens/Firefox_Android.jpg"
 alt="screen of dark home page on Android"
-width="500">
+width="350">
 
 <img 
 src="https://raw.githubusercontent.com/Eccenux/niantic-wayfarer-darkness/master/screens/PC-review-nomination-dark.png"
