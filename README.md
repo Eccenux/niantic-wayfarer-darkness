@@ -3,7 +3,12 @@ Dark skin for OPR aka Niantic Wayfarer (portal reviews for Ingress, Pokemon GO a
 
 Assuming you already have everything just &rarr; **[install the script](https://github.com/Eccenux/niantic-wayfarer-darkness/raw/master/niantic-wayfarer-darkness.user.js)**. And then go to [OPR aka Niantic Wayfarer](https://wayfarer.nianticlabs.com/).
 
-If that didn't work, then you might want to check full instruction (below).
+If that didn't work, then you might want to check full instruction ([below](#Installation)).
+
+<img 
+src="https://raw.githubusercontent.com/Eccenux/niantic-wayfarer-darkness/master/screens/Firefox_Android.jpg"
+alt="screen of dark home page on Android"
+width="500">
 
 <img 
 src="https://raw.githubusercontent.com/Eccenux/niantic-wayfarer-darkness/master/screens/PC-review-nomination-dark.png"
