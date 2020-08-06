@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         OPR dark look and feel
 // @namespace    pl.enux.opr
-// @version      1.0.0
-// @description  Dark skin for OPR aka Niantic Wayfarer (portal reviews)
+// @version      1.0.1
+// @description  [1.0.1] Dark skin for OPR aka Niantic Wayfarer (portal reviews)
 // @author       Eccenux
 // @match        https://wayfarer.nianticlabs.com/*
 // @run-at       document-start
@@ -41,6 +41,10 @@ function addCss() {
 }
 .niantic-wayfarer-logo > img {
 	filter: invert() hue-rotate(180deg) brightness(1.2) saturate(80%);
+}
+// menu (mobile)
+.header .hamburger::before {
+	filter: invert(1);
 }
 ////
 // main loader
